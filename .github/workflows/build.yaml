@@ -1,0 +1,79 @@
+name: Build Rule Sets
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+          cache: true
+          cache-dependency-path: scripts/go.sum
+
+      - name: Prepare Release Directory
+        run: mkdir -p release
+
+      - name: Build Mihomo (.mrs)
+        run: |
+          wget -O mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/v1.19.29/mihomo-linux-amd64-v1.19.29.gz
+          gunzip mihomo.gz
+          chmod +x mihomo
+
+          for file in src/domains/*.txt; do
+            name=$(basename "$file" .txt)
+            if ! grep -qE '^[^#[:space:]]' "$file"; then
+              echo "::warning::${file} не содержит записей"
+              continue
+            fi
+            ./mihomo convert-ruleset domain text "$file" "release/${name}.mrs"
+          done
+
+          for file in src/ips/*.txt; do
+            name=$(basename "$file" .txt)
+            if ! grep -qE '^[^#[:space:]]' "$file"; then
+              echo "::warning::${file} не содержит записей"
+              continue
+            fi
+            case "$name" in
+              *-ip) outname="$name" ;;
+              *) outname="${name}-ip" ;;
+            esac
+            ./mihomo convert-ruleset ipcidr text "$file" "release/${outname}.mrs"
+          done
+
+      - name: Setup Sing-Box
+        run: |
+          wget -O sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.9.3/sing-box-1.9.3-linux-amd64.tar.gz
+          tar -xzf sing-box.tar.gz
+          sudo cp sing-box-1.9.3-linux-amd64/sing-box /usr/local/bin/
+
+      - name: Build Xray (.dat) and Sing-Box (.srs)
+        run: |
+          cd scripts
+          go run build_geosite.go
+          go run build_geoip.go
+          go run build_srs.go
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*
+          tag_name: latest
+          name: Latest Rules
+          draft: false
+          prerelease: false

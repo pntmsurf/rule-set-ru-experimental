@@ -1,0 +1,109 @@
+# DIRECT / REJECT
+
+# Публичные трекеры и OpenBitTorrent
+# Анонсеры для координации пиров
+openbittorrent.com
+opentrackr.org
+publicbt.com
+torrent.ubuntu.com
+ipv6.tracker.harry.lu
+cyberia.is
+tracker.moeking.me
+tracker.dler.org
+tracker.opentrackr.org
+tracker.openbittorrent.com
+
+# СНГ трекеры
+# RuTracker, NNM-Club, RuTor, Кинозал
+bt.t-ru.org
+bt2.t-ru.org
+bt3.t-ru.org
+bt4.t-ru.org
+retracker.local
+nnm-club.ws
+nnm-club.me
+nnm-club.to
+rutor.info
+rutor.is
+tracker.rutor.org
+kinozal.tv
+kinozal.me
+tr.kinozal.tv
+tr.kinozal.me
+tfile.me
+tracker.tfile.me
+megapeer.org
+megapeer.vip
+tracker.megapeer.org
+seedoff.net
+seedoff.tv
+tracker.seedoff.tv
+tapochek.net
+tracker.tapochek.net
+riper.am
+tr.anilibria.tv
+anilibria.tv
+animelayer.ru
+tracker.animelayer.ru
+anime-sharing.com
+pornolab.net
+bt.pornolab.net
+
+# Зарубежные трекеры
+# The Pirate Bay, 1337x, RARBG зеркала, YTS
+thepiratebay.org
+thepiratebay.zone
+1337x.to
+1337x.st
+1337x.ws
+yts.mx
+yts.lt
+yts.am
+eztv.re
+eztv.wf
+eztv.yt
+torrentgalaxy.to
+tgx.rs
+limetorrents.lol
+limetorrents.pro
+torlock.com
+zooqle.com
+nyaa.si
+sukebei.nyaa.si
+nyaa.net
+tokyotosho.info
+torrentproject2.net
+btdig.com
+btdigg.org
+acg.rip
+tracker.acg.rip
+bangumi.moe
+
+# Приватные трекеры
+# RED, GazelleGames, PassThePopcorn, TeamOS
+flacsfor.me
+passthepopcorn.me
+broadcasthe.net
+gazellegames.net
+team-os.com
+tracker.team-os.com
+alpharatio.cc
+avistaz.to
+cinemaz.to
+privatehd.to
+myspleen.org
+cgpeers.to
+hdbits.org
+filelist.io
+karagarga.in
+torrentleech.org
+iptorrents.com
+
+# DHT bootstrap ноды
+# Инфраструктура поиска без трекеров
+router.bittorrent.com
+router.utorrent.com
+dht.transmissionbt.com
+dht.aelitis.com
+bootstrap.jami.net
+dht.libtorrent.org

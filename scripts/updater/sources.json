@@ -1,0 +1,76 @@
+[
+  {
+    "file": "../../src/domains/ads.txt",
+    "sources": [
+      { "url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt", "type": "adguard" },
+      { "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt", "type": "adguard" }
+    ]
+  },
+  {
+    "file": "../../src/domains/ai.txt",
+    "sources": [
+      { "url": "https://cdn.jsdelivr.net/gh/VPSDance/ai-proxy-rules@main/rules/clash/global.yaml", "type": "clash-payload" }
+    ]
+  },
+  {
+    "file": "../../src/domains/blocked.txt",
+    "sources": [
+      { "url": "https://community.antifilter.download/list/domains.lst", "type": "plain" },
+      { "url": "https://antizapret.prostovpn.org/domains-export.txt", "type": "plain" },
+      { "url": "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Russia/inside-raw.lst", "type": "plain" }
+    ]
+  },
+  {
+    "file": "../../src/domains/cookies.txt",
+    "sources": [
+      { "url": "https://filters.adtidy.org/extension/chromium/filters/18.txt", "type": "adguard" }
+    ]
+  },
+  {
+    "file": "../../src/domains/country.txt",
+    "sources": [
+      { "url": "https://github.com/runetfreedom/russia-blocked-geosite/releases/latest/download/ru-available-only-inside.txt", "type": "plain" }
+    ]
+  },
+  {
+    "file": "../../src/domains/doh-dot.txt",
+    "sources": [
+      { "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/doh.txt", "type": "adguard" },
+      { "url": "https://raw.githubusercontent.com/dibdot/DoH-IP-blocklists/master/doh-domains.txt", "type": "plain" }
+    ]
+  },
+  {
+    "file": "../../src/domains/malware.txt",
+    "sources": [
+      { "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.medium.txt", "type": "adguard" },
+      { "url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds.txt", "type": "adguard" }
+    ]
+  },
+  {
+    "file": "../../src/domains/spy.txt",
+    "sources": [
+      { "url": "https://filters.adtidy.org/extension/chromium/filters/3.txt", "type": "adguard" },
+      { "url": "https://raw.githubusercontent.com/parhelia512/adblockfilters/main/rules/EasyPrivacy.txt", "type": "adguard" }
+    ]
+  },
+  {
+    "file": "../../src/ips/blocked-ip.txt",
+    "sources": [
+      { "url": "https://community.antifilter.download/list/community.lst", "type": "cidr-plain" }
+    ]
+  },
+  {
+    "file": "../../src/ips/country-ip.txt",
+    "sources": [
+      {
+        "url": "https://ftp.ripe.net/ripe/stats/delegated-ripencc-latest",
+        "type": "ripe-cidr",
+        "country_code": "RU",
+        "ip_types": ["ipv4", "ipv6"],
+        "statuses": ["allocated", "assigned"]
+      },
+      { "url": "https://www.ipdeny.com/ipblocks/data/countries/ru.zone", "type": "cidr-plain" },
+      { "url": "https://www.ipdeny.com/ipv6/ipaddresses/blocks/ru.zone", "type": "cidr-plain" }
+    ]
+  }
+]
